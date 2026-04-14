@@ -1,0 +1,153 @@
+/* Базовые стили */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    color: #1a2340;
+    background-color: #ffffff;
+    line-height: 1.5;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Шапка сайта */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e5e8ef;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 12px 24px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Кнопка-гамбургер */
+.menu-toggle {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background-color: #1a2340;
+    border-radius: 2px;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.menu-toggle:hover span {
+    background-color: #3b4a7a;
+}
+
+/* Логотип */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.logo-img {
+    width: 56px;
+    height: 56px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.logo-text {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1a2340;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+/* Главное меню */
+.main-nav {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.25s ease;
+    border-top: 1px solid transparent;
+}
+
+.main-nav.is-open {
+    max-height: 500px;
+    border-top-color: #e5e8ef;
+}
+
+.nav-list {
+    list-style: none;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 8px 24px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+}
+
+.nav-list li a {
+    display: inline-block;
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: background-color 0.15s ease;
+}
+
+.nav-list li a:hover {
+    background-color: #f2f4fa;
+}
+
+/* Основной контент */
+.site-main {
+    padding: 40px 0;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* Адаптивность */
+@media (max-width: 640px) {
+    .logo-text {
+        font-size: 14px;
+    }
+
+    .logo-img {
+        width: 44px;
+        height: 44px;
+    }
+
+    .header-inner {
+        padding: 10px 16px;
+        gap: 12px;
+    }
+}
